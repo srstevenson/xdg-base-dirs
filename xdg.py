@@ -1,3 +1,5 @@
+# encoding=utf-8
+
 """XDG Base Directory Specification variables
 
 XDG_CACHE_HOME, XDG_CONFIG_HOME, and XDG_DATA_HOME are strings
