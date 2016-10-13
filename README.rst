@@ -1,6 +1,15 @@
 xdg
 ===
 
+.. image:: https://img.shields.io/travis/srstevenson/xdg.svg?maxAge=2592000
+	   :target: https://travis-ci.org/srstevenson/xdg
+
+.. image:: https://img.shields.io/github/tag/srstevenson/xdg.svg?maxAge=2592000
+	   :target: https://github.com/srstevenson/xdg/releases
+
+.. image:: https://img.shields.io/pypi/v/xdg.svg?maxAge=2592000
+	   :target: https://pypi.python.org/pypi/xdg/
+
 ``xdg`` is a tiny Python module which provides the variables defined by the
 `XDG Base Directory Specification`_, to save you from duplicating the same
 snippet of logic in every Python utility you write that deals with user cache,
