@@ -17,7 +17,7 @@ variable of the same name, or None if the environment variable is not
 set.
 """
 
-# Copyright © 2016 Scott Stevenson <scott@stevenson.io>
+# Copyright © 2016-2017 Scott Stevenson <scott@stevenson.io>
 #
 # Permission to use, copy, modify, and/or distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -59,10 +59,12 @@ def _getenv(variable, default):
     return value
 
 
-XDG_CACHE_HOME = _getenv('XDG_CACHE_HOME', os.path.expanduser('~/.cache'))
+XDG_CACHE_HOME = _getenv('XDG_CACHE_HOME', os.path.expandvars('$HOME/.cache'))
 XDG_CONFIG_DIRS = _getenv('XDG_CONFIG_DIRS', '/etc/xdg').split(':')
-XDG_CONFIG_HOME = _getenv('XDG_CONFIG_HOME', os.path.expanduser('~/.config'))
+XDG_CONFIG_HOME = _getenv('XDG_CONFIG_HOME',
+                          os.path.expandvars('$HOME/.config'))
 XDG_DATA_DIRS = _getenv('XDG_DATA_DIRS',
                         '/usr/local/share/:/usr/share/').split(':')
-XDG_DATA_HOME = _getenv('XDG_DATA_HOME', os.path.expanduser('~/.local/share'))
+XDG_DATA_HOME = _getenv('XDG_DATA_HOME',
+                        os.path.expandvars('$HOME/.local/share'))
 XDG_RUNTIME_DIR = os.getenv('XDG_RUNTIME_DIR')

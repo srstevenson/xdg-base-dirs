@@ -57,7 +57,7 @@ variable of the same name, or ``None`` if the environment variable is unset.
 Copyright
 ---------
 
-Copyright © 2016 `Scott Stevenson`_.
+Copyright © 2016-2017 `Scott Stevenson`_.
 
 ``xdg`` is distributed under the terms of the `ISC licence`_.
 
