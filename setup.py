@@ -18,7 +18,7 @@ def read_long_description():
 
 setup(
     name='xdg',
-    version='1.0.3',
+    version='1.0.4',
     description='Variables defined by the XDG Base Directory Specification',
     long_description=read_long_description(),
     url='https://github.com/srstevenson/xdg',
