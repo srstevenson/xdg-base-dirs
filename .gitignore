@@ -1,4 +1,5 @@
 *.egg-info
 *.pyc
+.mypy_cache/
 /build
 /dist
