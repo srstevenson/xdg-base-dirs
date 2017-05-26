@@ -1,16 +1,17 @@
-"""Setup module for xdg"""
+"""Setup module for xdg."""
 
 import os.path
+
 from setuptools import setup
 
 
 def source_root_dir():
-    """Return the path to the root of the source distribution"""
+    """Return the path to the root of the source distribution."""
     return os.path.abspath(os.path.dirname(__file__))
 
 
 def read_long_description():
-    """Read from README.rst file in root of source directory"""
+    """Read from README.rst file in root of source directory."""
     readme = os.path.join(source_root_dir(), 'README.rst')
     with open(readme) as fin:
         return fin.read()

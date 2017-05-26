@@ -7,5 +7,5 @@ python:
 install:
   - pip install flake8 flake8-builtins flake8-docstrings flake8-import-order pylint
 script:
-  - flake8 xdg.py
-  - pylint -r n xdg.py
+  - flake8 setup.py xdg.py
+  - pylint -r n setup.py xdg.py
