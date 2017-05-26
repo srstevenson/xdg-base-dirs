@@ -53,10 +53,7 @@ def _getenv(variable, default):
     str
         The value of the environment variable, or the default value.
     """
-    value = os.getenv(variable, '')
-    if value == '':
-        return default
-    return value
+    return os.environ.get(variable) or default
 
 
 XDG_CACHE_HOME = _getenv('XDG_CACHE_HOME', os.path.expandvars('$HOME/.cache'))
