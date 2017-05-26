@@ -1,6 +1,6 @@
 # encoding=utf-8
 
-"""XDG Base Directory Specification variables
+"""XDG Base Directory Specification variables.
 
 XDG_CACHE_HOME, XDG_CONFIG_HOME, and XDG_DATA_HOME are strings
 containing the value of the environment variable of the same name, or
@@ -52,6 +52,7 @@ def _getenv(variable, default):
     -------
     str
         The value of the environment variable, or the default value.
+
     """
     return os.environ.get(variable) or default
 
