@@ -1,6 +1,6 @@
 NAME = xdg
 
-lint:
+check:
 	mypy --ignore-missing-imports $(NAME).py
 	flake8 $(NAME).py
 	pylint -r n -s n $(NAME).py
@@ -8,11 +8,11 @@ lint:
 format:
 	yapf -i $(NAME).py
 
-upload: lint
+upload: check
 	python setup.py sdist bdist_wheel
 	twine upload -s dist/*
 
 clean:
 	$(RM) -r $(wildcard *.egg-info *.pyc) build dist
 
-.PHONY: clean format lint upload
+.PHONY: clean format check upload
