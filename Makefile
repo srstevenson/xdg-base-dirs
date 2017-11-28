@@ -1,6 +1,7 @@
 NAME = xdg
 
 lint:
+	mypy --ignore-missing-imports $(NAME).py
 	flake8 $(NAME).py
 	pylint -r n $(NAME).py
 
