@@ -13,8 +13,7 @@ xdg
 ``xdg`` is a tiny Python module which provides the variables defined by the
 `XDG Base Directory Specification`_, to save you from duplicating the same
 snippet of logic in every Python utility you write that deals with user cache,
-configuration, or data files. It has no external dependencies and supports
-Python 2 and 3.
+configuration, or data files. It has no external dependencies.
 
 .. _`XDG Base Directory Specification`: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 
