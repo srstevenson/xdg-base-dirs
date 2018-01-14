@@ -57,12 +57,14 @@ def _getenv(variable: str, default: str) -> str:
     return os.environ.get(variable) or default
 
 
-XDG_CACHE_HOME = _getenv('XDG_CACHE_HOME', os.path.expandvars('$HOME/.cache'))
+XDG_CACHE_HOME = _getenv('XDG_CACHE_HOME',
+                         os.path.expandvars(os.path.join('$HOME', '.cache')))
 XDG_CONFIG_DIRS = _getenv('XDG_CONFIG_DIRS', '/etc/xdg').split(':')
 XDG_CONFIG_HOME = _getenv('XDG_CONFIG_HOME',
-                          os.path.expandvars('$HOME/.config'))
+                          os.path.expandvars(os.path.join('$HOME', '.config')))
 XDG_DATA_DIRS = _getenv('XDG_DATA_DIRS',
                         '/usr/local/share/:/usr/share/').split(':')
 XDG_DATA_HOME = _getenv('XDG_DATA_HOME',
-                        os.path.expandvars('$HOME/.local/share'))
+                        os.path.expandvars(
+                            os.path.join('$HOME', '.local', 'share')))
 XDG_RUNTIME_DIR = os.getenv('XDG_RUNTIME_DIR')
