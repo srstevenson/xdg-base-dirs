@@ -27,6 +27,7 @@ setup(
         'License :: OSI Approved :: ISC License (ISCL)',
         'Natural Language :: English',
         'Operating System :: Unix',
+        'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python :: 3.6',
     ],
     keywords='xdg base directory specification',
