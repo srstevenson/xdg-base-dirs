@@ -31,8 +31,10 @@ set.
 
 import os
 
-__all__ = ['XDG_CACHE_HOME', 'XDG_CONFIG_DIRS', 'XDG_CONFIG_HOME',
-           'XDG_DATA_DIRS', 'XDG_DATA_HOME', 'XDG_RUNTIME_DIR']
+__all__ = [
+    'XDG_CACHE_HOME', 'XDG_CONFIG_DIRS', 'XDG_CONFIG_HOME', 'XDG_DATA_DIRS',
+    'XDG_DATA_HOME', 'XDG_RUNTIME_DIR'
+]
 
 
 def _getenv(variable: str, default: str) -> str:
