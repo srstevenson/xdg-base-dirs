@@ -1,7 +1,7 @@
 check: lint test
 
 lint:
-	mypy --ignore-missing-imports xdg.py test_xdg.py
+	mypy --ignore-missing-imports --strict xdg.py test_xdg.py
 	flake8 xdg.py test_xdg.py
 	pylint -r n -s n xdg.py test_xdg.py
 
