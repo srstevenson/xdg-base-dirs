@@ -1,12 +1,15 @@
-NAME = xdg
+check: lint test
 
-check:
-	mypy --ignore-missing-imports $(NAME).py
-	flake8 $(NAME).py
-	pylint -r n -s n $(NAME).py
+lint:
+	mypy --ignore-missing-imports xdg.py test_xdg.py
+	flake8 xdg.py test_xdg.py
+	pylint -r n -s n xdg.py test_xdg.py
+
+test:
+	pytest test_xdg.py
 
 format:
-	yapf -i $(NAME).py
+	yapf -i xdg.py test_xdg.py
 
 upload: check
 	python setup.py sdist bdist_wheel
@@ -15,4 +18,4 @@ upload: check
 clean:
 	$(RM) -r $(wildcard *.egg-info *.pyc) build dist
 
-.PHONY: clean format check upload
+.PHONY: clean format check lint test upload
