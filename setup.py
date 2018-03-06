@@ -32,4 +32,10 @@ setup(
     ],
     keywords='xdg base directory specification',
     py_modules=['xdg'],
+    setup_requires=[
+        'pytest-runner'
+    ],
+    tests_require=[
+        'pytest'
+    ],
 )
