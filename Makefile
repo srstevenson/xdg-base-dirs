@@ -6,7 +6,7 @@ lint:
 	pylint -r n -s n xdg.py test/*.py
 
 test:
-	pytest
+	python setup.py test
 
 format:
 	yapf -i xdg.py test/*.py
