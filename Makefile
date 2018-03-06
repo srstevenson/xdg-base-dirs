@@ -1,15 +1,15 @@
 check: lint test
 
 lint:
-	mypy --ignore-missing-imports --strict xdg.py test_xdg.py
-	flake8 xdg.py test_xdg.py
-	pylint -r n -s n xdg.py test_xdg.py
+	mypy --ignore-missing-imports --strict xdg.py test/*.py
+	flake8 xdg.py test/*.py
+	pylint -r n -s n xdg.py test/*.py
 
 test:
-	pytest test_xdg.py
+	pytest
 
 format:
-	yapf -i xdg.py test_xdg.py
+	yapf -i xdg.py test/*.py
 
 upload: check
 	python setup.py sdist bdist_wheel
