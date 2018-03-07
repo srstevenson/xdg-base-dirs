@@ -2,5 +2,6 @@
 *.pyc
 .mypy_cache/
 /.cache/
+/.eggs/
 /build
 /dist
