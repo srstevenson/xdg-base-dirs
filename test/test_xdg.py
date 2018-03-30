@@ -6,10 +6,10 @@ from typing import Callable, TYPE_CHECKING
 
 import pytest  # pylint: disable=import-error
 
-# pylint: disable=unused-import
+# pylint: disable=import-error,unused-import
 if TYPE_CHECKING:
     from _pytest.monkeypatch import MonkeyPatch  # noqa
-# pylint: enable=unused-import
+# pylint: enable=import-error,unused-import
 
 HOME_DIR = '/homedir'
 
