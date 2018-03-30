@@ -8,7 +8,7 @@ xdg
 	   :target: https://github.com/srstevenson/xdg/releases
 
 .. image:: https://img.shields.io/pypi/v/xdg.svg?maxAge=2592000
-	   :target: https://pypi.python.org/pypi/xdg/
+	   :target: https://pypi.org/project/xdg/
 
 ``xdg`` is a tiny Python module which provides the variables defined by the
 `XDG Base Directory Specification`_, to save you from duplicating the same
@@ -30,7 +30,7 @@ Alternatively, since ``xdg`` is only a single file you may prefer to just copy
 ``xdg.py`` from the source distribution into your project.
 
 .. _`pip`: https://pip.pypa.io/
-.. _`PyPI`: https://pypi.python.org/pypi/xdg
+.. _`PyPI`: https://pypi.org/project/xdg/
 
 Usage
 -----
