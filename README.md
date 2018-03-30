@@ -7,10 +7,10 @@ configuration, or data files. It has no external dependencies.
 
 ## Installation
 
-To install the latest release from [PyPI], use [pip]:
+To install the latest release from [PyPI], use [Pipenv]:
 
 ```bash
-pip install xdg
+pipenv install xdg
 ```
 
 Alternatively, since `xdg` is only a single file you may prefer to just copy
@@ -41,7 +41,7 @@ Copyright © 2016-2018 [Scott Stevenson].
 `xdg` is distributed under the terms of the [ISC licence].
 
 [ISC licence]: https://opensource.org/licenses/ISC
-[pip]: https://pip.pypa.io/
+[Pipenv]: https://docs.pipenv.org/
 [PyPI]: https://pypi.org/project/xdg/
 [Scott Stevenson]: https://scott.stevenson.io
 [spec]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
