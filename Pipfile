@@ -15,6 +15,7 @@ wheel = "*"
 "flake8-builtins" = "*"
 "flake8-docstrings" = "*"
 "flake8-import-order" = "*"
+"flake8-bugbear" = "*"
 
 [requires]
 python_version = "3.6"
