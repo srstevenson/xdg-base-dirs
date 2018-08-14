@@ -1,7 +1,6 @@
 check: lint test
 
 lint:
-	pipenv run mypy --ignore-missing-imports --strict xdg.py test/*.py
 	pipenv run flake8 xdg.py test/*.py
 	pipenv run pylint -r n -s n xdg.py test/*.py
 
