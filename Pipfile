@@ -24,3 +24,4 @@ python_version = "3.7"
 # We pass `--strict` here as mypy does not support specifying it in the
 # `mypy.ini` configuration file.
 mypy = "mypy --strict setup.py test/ xdg.py"
+flake8 = "flake8 setup.py test/ xdg.py"
