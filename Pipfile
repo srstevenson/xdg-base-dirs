@@ -25,3 +25,4 @@ python_version = "3.7"
 # `mypy.ini` configuration file.
 mypy = "mypy --strict setup.py test/ xdg.py"
 flake8 = "flake8 setup.py test/ xdg.py"
+pylint = "pylint setup.py test/test_xdg.py xdg.py"
