@@ -1,0 +1,4 @@
+[REPORTS]
+
+# Don't activate the evaluation score.
+score=no
