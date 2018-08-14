@@ -10,4 +10,5 @@ install:
 script:
   - pipenv run mypy
   - pipenv run flake8
-  - make check
+  - pipenv run pylint
+  - make test
