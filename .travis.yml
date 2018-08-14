@@ -12,4 +12,5 @@ script:
   - pipenv run flake8
   - pipenv run pylint
   - pipenv run isort
+  - pipenv run black
   - make test
