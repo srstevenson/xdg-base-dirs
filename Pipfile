@@ -16,6 +16,7 @@ wheel = "*"
 "flake8-docstrings" = "*"
 "flake8-bugbear" = "*"
 isort = "*"
+black = "*"
 
 [requires]
 python_version = "3.7"
