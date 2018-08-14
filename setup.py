@@ -30,6 +30,7 @@ setup(
         'Operating System :: Unix',
         'Operating System :: Microsoft :: Windows',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     keywords='xdg base directory specification',
     py_modules=['xdg'],
