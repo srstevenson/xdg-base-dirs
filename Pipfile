@@ -14,8 +14,8 @@ twine = "*"
 wheel = "*"
 "flake8-builtins" = "*"
 "flake8-docstrings" = "*"
-"flake8-import-order" = "*"
 "flake8-bugbear" = "*"
+isort = "*"
 
 [requires]
 python_version = "3.7"
