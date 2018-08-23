@@ -16,6 +16,7 @@ wheel = "*"
 "flake8-bugbear" = "*"
 isort = "*"
 black = "*"
+"flake8-comprehensions" = "*"
 
 [scripts]
 # We pass `--strict` here as mypy does not support specifying it in the
