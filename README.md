@@ -40,8 +40,8 @@ Copyright © 2016-2018 [Scott Stevenson].
 
 `xdg` is distributed under the terms of the [ISC licence].
 
-[ISC licence]: https://opensource.org/licenses/ISC
-[Pipenv]: https://docs.pipenv.org/
-[PyPI]: https://pypi.org/project/xdg/
-[Scott Stevenson]: https://scott.stevenson.io
+[isc licence]: https://opensource.org/licenses/ISC
+[pipenv]: https://docs.pipenv.org/
+[pypi]: https://pypi.org/project/xdg/
+[scott stevenson]: https://scott.stevenson.io
 [spec]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
