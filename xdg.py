@@ -15,7 +15,7 @@ variable of the same name, or None if the environment variable is not
 set.
 """
 
-# Copyright © 2016-2018 Scott Stevenson <scott@stevenson.io>
+# Copyright © 2016-2019 Scott Stevenson <scott@stevenson.io>
 #
 # Permission to use, copy, modify, and/or distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
