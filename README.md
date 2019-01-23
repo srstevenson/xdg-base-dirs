@@ -1,4 +1,4 @@
-# xdg [![Build status](https://img.shields.io/travis/srstevenson/xdg.svg?maxAge=2592000)](https://travis-ci.org/srstevenson/xdg) [![GitHub tag](https://img.shields.io/github/tag/srstevenson/xdg.svg?maxAge=2592000)](https://github.com/srstevenson/xdg/releases) [![PyPI release](https://img.shields.io/pypi/v/xdg.svg?maxAge=2592000)](https://pypi.org/project/xdg/)
+# xdg
 
 `xdg` is a tiny Python module which provides the variables defined by the [XDG
 Base Directory Specification][spec], to save you from duplicating the same
@@ -7,12 +7,14 @@ configuration, or data files. It has no external dependencies.
 
 ## Installation
 
-To install the latest release from [PyPI], use [Pipenv]:
+To install the latest release from [PyPI], use [pip]:
 
 ```bash
-pipenv install xdg
+pip install xdg
 ```
 
+In Python projects using [Poetry] or [Pipenv] for dependency management, add
+`xdg` as a dependency with `poetry add xdg` or `pipenv install xdg`.
 Alternatively, since `xdg` is only a single file you may prefer to just copy
 `xdg.py` from the source distribution into your project.
 
@@ -41,7 +43,9 @@ Copyright © 2016-2019 [Scott Stevenson].
 `xdg` is distributed under the terms of the [ISC licence].
 
 [isc licence]: https://opensource.org/licenses/ISC
+[pip]: https://pip.pypa.io/en/stable/
 [pipenv]: https://docs.pipenv.org/
+[poetry]: https://poetry.eustace.io/
 [pypi]: https://pypi.org/project/xdg/
 [scott stevenson]: https://scott.stevenson.io
 [spec]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
