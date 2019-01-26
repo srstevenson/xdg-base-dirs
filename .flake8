@@ -1,0 +1,4 @@
+[flake8]
+per-file-ignores =
+    noxfile.py: D001
+    test/test_xdg.py: D001
