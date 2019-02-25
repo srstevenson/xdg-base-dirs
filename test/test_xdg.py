@@ -2,6 +2,7 @@
 
 import os
 import sys
+from pathlib import Path
 from typing import TYPE_CHECKING, Callable
 
 import pytest  # pylint: disable=import-error
@@ -11,7 +12,7 @@ if TYPE_CHECKING:
     from _pytest.monkeypatch import MonkeyPatch  # noqa
 # pylint: enable=import-error,unused-import
 
-HOME_DIR = "/homedir"
+HOME_DIR = Path("/homedir")
 
 
 @pytest.fixture  # type: ignore
@@ -34,27 +35,27 @@ class TestXdgCacheHome:
     ) -> None:
         """Test when XDG_CACHE_HOME is unset."""
         monkeypatch.delenv("XDG_CACHE_HOME", raising=False)
-        monkeypatch.setenv("HOME", HOME_DIR)
+        monkeypatch.setenv("HOME", os.fspath(HOME_DIR))
         from xdg import XDG_CACHE_HOME
 
-        assert XDG_CACHE_HOME == os.path.join(HOME_DIR, ".cache")
+        assert XDG_CACHE_HOME == HOME_DIR / ".cache"
 
     def test_empty(
         self, monkeypatch: "MonkeyPatch", unimport: Callable
     ) -> None:
         """Test when XDG_CACHE_HOME is empty."""
-        monkeypatch.setenv("HOME", HOME_DIR)
+        monkeypatch.setenv("HOME", os.fspath(HOME_DIR))
         monkeypatch.setenv("XDG_CACHE_HOME", "")
         from xdg import XDG_CACHE_HOME
 
-        assert XDG_CACHE_HOME == os.path.join(HOME_DIR, ".cache")
+        assert XDG_CACHE_HOME == HOME_DIR / ".cache"
 
     def test_set(self, monkeypatch: "MonkeyPatch", unimport: Callable) -> None:
         """Test when XDG_CACHE_HOME is set."""
         monkeypatch.setenv("XDG_CACHE_HOME", "/xdg_cache_home")
         from xdg import XDG_CACHE_HOME
 
-        assert XDG_CACHE_HOME == "/xdg_cache_home"
+        assert XDG_CACHE_HOME == Path("/xdg_cache_home")
 
 
 class TestXdgConfigDirs:
@@ -67,7 +68,7 @@ class TestXdgConfigDirs:
         monkeypatch.delenv("XDG_CONFIG_DIRS", raising=False)
         from xdg import XDG_CONFIG_DIRS
 
-        assert XDG_CONFIG_DIRS == ["/etc/xdg"]
+        assert XDG_CONFIG_DIRS == [Path("/etc/xdg")]
 
     def test_empty(
         self, monkeypatch: "MonkeyPatch", unimport: Callable
@@ -76,14 +77,14 @@ class TestXdgConfigDirs:
         monkeypatch.setenv("XDG_CONFIG_DIRS", "")
         from xdg import XDG_CONFIG_DIRS
 
-        assert XDG_CONFIG_DIRS == ["/etc/xdg"]
+        assert XDG_CONFIG_DIRS == [Path("/etc/xdg")]
 
     def test_set(self, monkeypatch: "MonkeyPatch", unimport: Callable) -> None:
         """Test when XDG_CONFIG_DIRS is set."""
         monkeypatch.setenv("XDG_CONFIG_DIRS", "/first:/sec/ond")
         from xdg import XDG_CONFIG_DIRS
 
-        assert XDG_CONFIG_DIRS == ["/first", "/sec/ond"]
+        assert XDG_CONFIG_DIRS == [Path("/first"), Path("/sec/ond")]
 
 
 class TestXdgConfigHome:
@@ -94,27 +95,27 @@ class TestXdgConfigHome:
     ) -> None:
         """Test when XDG_CONFIG_HOME is unset."""
         monkeypatch.delenv("XDG_CONFIG_HOME", raising=False)
-        monkeypatch.setenv("HOME", HOME_DIR)
+        monkeypatch.setenv("HOME", os.fspath(HOME_DIR))
         from xdg import XDG_CONFIG_HOME
 
-        assert XDG_CONFIG_HOME == os.path.join(HOME_DIR, ".config")
+        assert XDG_CONFIG_HOME == HOME_DIR / ".config"
 
     def test_empty(
         self, monkeypatch: "MonkeyPatch", unimport: Callable
     ) -> None:
         """Test when XDG_CONFIG_HOME is empty."""
-        monkeypatch.setenv("HOME", HOME_DIR)
+        monkeypatch.setenv("HOME", os.fspath(HOME_DIR))
         monkeypatch.setenv("XDG_CONFIG_HOME", "")
         from xdg import XDG_CONFIG_HOME
 
-        assert XDG_CONFIG_HOME == os.path.join(HOME_DIR, ".config")
+        assert XDG_CONFIG_HOME == HOME_DIR / ".config"
 
     def test_set(self, monkeypatch: "MonkeyPatch", unimport: Callable) -> None:
         """Test when XDG_CONFIG_HOME is set."""
         monkeypatch.setenv("XDG_CONFIG_HOME", "/xdg_config_home")
         from xdg import XDG_CONFIG_HOME
 
-        assert XDG_CONFIG_HOME == "/xdg_config_home"
+        assert XDG_CONFIG_HOME == Path("/xdg_config_home")
 
 
 class TestXdgDataDirs:
@@ -127,7 +128,10 @@ class TestXdgDataDirs:
         monkeypatch.delenv("XDG_DATA_DIRS", raising=False)
         from xdg import XDG_DATA_DIRS
 
-        assert XDG_DATA_DIRS == ["/usr/local/share/", "/usr/share/"]
+        assert XDG_DATA_DIRS == [
+            Path("/usr/local/share/"),
+            Path("/usr/share/"),
+        ]
 
     def test_empty(
         self, monkeypatch: "MonkeyPatch", unimport: Callable
@@ -136,14 +140,17 @@ class TestXdgDataDirs:
         monkeypatch.setenv("XDG_DATA_DIRS", "")
         from xdg import XDG_DATA_DIRS
 
-        assert XDG_DATA_DIRS == ["/usr/local/share/", "/usr/share/"]
+        assert XDG_DATA_DIRS == [
+            Path("/usr/local/share/"),
+            Path("/usr/share/"),
+        ]
 
     def test_set(self, monkeypatch: "MonkeyPatch", unimport: Callable) -> None:
         """Test when XDG_DATA_DIRS is set."""
         monkeypatch.setenv("XDG_DATA_DIRS", "/first/:/sec/ond/")
         from xdg import XDG_DATA_DIRS
 
-        assert XDG_DATA_DIRS == ["/first/", "/sec/ond/"]
+        assert XDG_DATA_DIRS == [Path("/first/"), Path("/sec/ond/")]
 
 
 class TestXdgDataHome:
@@ -154,27 +161,27 @@ class TestXdgDataHome:
     ) -> None:
         """Test when XDG_DATA_HOME is unset."""
         monkeypatch.delenv("XDG_DATA_HOME", raising=False)
-        monkeypatch.setenv("HOME", HOME_DIR)
+        monkeypatch.setenv("HOME", os.fspath(HOME_DIR))
         from xdg import XDG_DATA_HOME
 
-        assert XDG_DATA_HOME == os.path.join(HOME_DIR, ".local", "share")
+        assert XDG_DATA_HOME == HOME_DIR / ".local" / "share"
 
     def test_empty(
         self, monkeypatch: "MonkeyPatch", unimport: Callable
     ) -> None:
         """Test when XDG_DATA_HOME is empty."""
-        monkeypatch.setenv("HOME", HOME_DIR)
+        monkeypatch.setenv("HOME", os.fspath(HOME_DIR))
         monkeypatch.setenv("XDG_DATA_HOME", "")
         from xdg import XDG_DATA_HOME
 
-        assert XDG_DATA_HOME == os.path.join(HOME_DIR, ".local", "share")
+        assert XDG_DATA_HOME == HOME_DIR / ".local" / "share"
 
     def test_set(self, monkeypatch: "MonkeyPatch", unimport: Callable) -> None:
         """Test when XDG_DATA_HOME is set."""
         monkeypatch.setenv("XDG_DATA_HOME", "/xdg_data_home")
         from xdg import XDG_DATA_HOME
 
-        assert XDG_DATA_HOME == "/xdg_data_home"
+        assert XDG_DATA_HOME == Path("/xdg_data_home")
 
 
 class TestXdgRuntimeDir:
@@ -196,11 +203,11 @@ class TestXdgRuntimeDir:
         monkeypatch.setenv("XDG_RUNTIME_DIR", "")
         from xdg import XDG_RUNTIME_DIR
 
-        assert XDG_RUNTIME_DIR == ""
+        assert XDG_RUNTIME_DIR == Path("")
 
     def test_set(self, monkeypatch: "MonkeyPatch", unimport: Callable) -> None:
         """Test when XDG_RUNTIME_DIR is set."""
         monkeypatch.setenv("XDG_RUNTIME_DIR", "/xdg_runtime_dir")
         from xdg import XDG_RUNTIME_DIR
 
-        assert XDG_RUNTIME_DIR == "/xdg_runtime_dir"
+        assert XDG_RUNTIME_DIR == Path("/xdg_runtime_dir")
