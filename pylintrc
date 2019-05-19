@@ -1,5 +1,3 @@
 [MESSAGES CONTROL]
-
-# Disable the message, report, category or checker with the given name.
-disable=bad-continuation,  # https://github.com/ambv/black/issues/48#issuecomment-408213493
+disable=bad-continuation,  # https://git.io/fj8D6
     fixme
