@@ -26,7 +26,7 @@ classifiers = [
     "Operating System :: Unix",
     "Operating System :: Microsoft :: Windows",
 ]
-include = ["LICENCE"]
+include = ["LICENCE", "src/xdg/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.6"
