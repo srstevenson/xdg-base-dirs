@@ -16,7 +16,7 @@ pip install xdg
 In Python projects using [Poetry] or [Pipenv] for dependency management, add
 `xdg` as a dependency with `poetry add xdg` or `pipenv install xdg`.
 Alternatively, since `xdg` is only a single file you may prefer to just copy
-`xdg.py` from the source distribution into your project.
+`src/xdg/__init__.py` from the source distribution into your project.
 
 ## Usage
 
