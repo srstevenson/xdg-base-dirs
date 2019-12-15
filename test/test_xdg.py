@@ -24,7 +24,8 @@ def unimport() -> None:
         pass
 
 
-# pylint: disable=no-self-use,redefined-outer-name,unused-argument
+# pylint: disable=import-outside-toplevel,no-self-use,redefined-outer-name
+# pylint: disable=unused-argument
 
 
 class TestXdgCacheHome:
