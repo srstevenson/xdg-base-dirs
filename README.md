@@ -49,7 +49,7 @@ Copyright © 2016-2019 [Scott Stevenson].
 [path]: https://docs.python.org/3/library/pathlib.html#pathlib.Path
 [pip]: https://pip.pypa.io/en/stable/
 [pipenv]: https://docs.pipenv.org/
-[poetry]: https://poetry.eustace.io/
+[poetry]: https://python-poetry.org/
 [pypi]: https://pypi.org/project/xdg/
 [scott stevenson]: https://scott.stevenson.io
 [spec]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
