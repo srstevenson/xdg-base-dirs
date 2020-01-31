@@ -10,7 +10,7 @@ configuration, or data files. It has no external dependencies.
 To install the latest release from [PyPI], use [pip]:
 
 ```bash
-pip install xdg
+python -m pip install xdg
 ```
 
 In Python projects using [Poetry] or [Pipenv] for dependency management, add
