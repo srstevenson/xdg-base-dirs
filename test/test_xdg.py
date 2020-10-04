@@ -1,16 +1,19 @@
 """Test suite for xdg."""
 
+# pylint: disable=import-outside-toplevel
+# pylint: disable=no-self-use
+# pylint: disable=redefined-outer-name
+# pylint: disable=unused-argument
+
 import os
 import sys
 from pathlib import Path
 from typing import TYPE_CHECKING, Callable
 
-import pytest  # pylint: disable=import-error
+import pytest
 
-# pylint: disable=import-error,unused-import
 if TYPE_CHECKING:
-    from _pytest.monkeypatch import MonkeyPatch  # noqa
-# pylint: enable=import-error,unused-import
+    from _pytest.monkeypatch import MonkeyPatch
 
 HOME_DIR = Path("/homedir")
 
@@ -22,10 +25,6 @@ def unimport() -> None:
         del sys.modules["xdg"]
     except KeyError:
         pass
-
-
-# pylint: disable=import-outside-toplevel,no-self-use,redefined-outer-name
-# pylint: disable=unused-argument
 
 
 class TestXdgCacheHome:

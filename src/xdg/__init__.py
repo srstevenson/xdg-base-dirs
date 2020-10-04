@@ -32,6 +32,8 @@ variable is not set.
 
 """
 
+# pylint: disable=fixme
+
 import os
 from pathlib import Path
 from typing import List, Optional
