@@ -41,7 +41,7 @@ unset.
 
 ## Copyright
 
-Copyright © 2016-2019 [Scott Stevenson].
+Copyright © 2016-2020 [Scott Stevenson].
 
 `xdg` is distributed under the terms of the [ISC licence].
 
