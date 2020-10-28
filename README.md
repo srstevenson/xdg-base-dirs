@@ -1,9 +1,10 @@
 # xdg
 
-`xdg` is a tiny Python module which provides the variables defined by the [XDG
-Base Directory Specification][spec], to save you from duplicating the same
-snippet of logic in every Python utility you write that deals with user cache,
-configuration, or data files. It has no external dependencies.
+`xdg` is a Python module which provides functions to return paths to the
+directories defined by the [XDG Base Directory Specification][spec], to save you
+from duplicating the same snippet of logic in every Python utility you write
+that deals with user cache, configuration, or data files. It has no external
+dependencies.
 
 ## Installation
 
@@ -21,23 +22,30 @@ Alternatively, since `xdg` is only a single file you may prefer to just copy
 ## Usage
 
 ```python
-from xdg import (XDG_CACHE_HOME, XDG_CONFIG_DIRS, XDG_CONFIG_HOME,
-                 XDG_DATA_DIRS, XDG_DATA_HOME, XDG_RUNTIME_DIR)
+from xdg import (
+    xdg_cache_home,
+    xdg_config_dirs,
+    xdg_config_home,
+    xdg_data_dirs,
+    xdg_data_home,
+    xdg_runtime_dir,
+)
 ```
 
-`XDG_CACHE_HOME`, `XDG_CONFIG_HOME`, and `XDG_DATA_HOME` are [`pathlib.Path`
-objects][path] containing the value of the environment variable of the same
-name, or the default defined in the specification if the environment variable is
-unset or empty.
+`xdg_cache_home()`, `xdg_config_home()`, and `xdg_data_home()` return
+[`pathlib.Path` objects][path] containing the value of the environment variable
+named `XDG_CACHE_HOME`, `XDG_CONFIG_HOME`, and `XDG_DATA_HOME` respectively, or
+the default defined in the specification if the environment variable is unset or
+empty.
 
-`XDG_CONFIG_DIRS` and `XDG_DATA_DIRS` are lists of `pathlib.Path` objects
-containing the value of the environment variable of the same name split on
-colons, or the default defined in the specification if the environment variable
-is unset or empty.
+`xdg_config_dirs()` and `xdg_data_dirs()` return a list of `pathlib.Path`
+objects containing the value, split on colons, of the environment variable named
+`XDG_CONFIG_DIRS` and `XDG_DATA_DIRS` respectively, or the default defined in
+the specification if the environment variable is unset or empty.
 
-`XDG_RUNTIME_DIR` is a `pathlib.Path` object containing the value of the
-environment variable of the same name, or `None` if the environment variable is
-unset.
+`xdg_runtime_dir()` returns a `pathlib.Path` object containing the value of the
+`XDG_RUNTIME_DIR` environment variable, or `None` if the environment variable is
+not set.
 
 ## Copyright
 
