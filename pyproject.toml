@@ -7,7 +7,7 @@ line_length = 79
 
 [tool.poetry]
 name = "xdg"
-version = "5.0.0"
+version = "5.0.1"
 description = "Variables defined by the XDG Base Directory Specification"
 authors = ["Scott Stevenson <scott@stevenson.io>"]
 license = "ISC"
