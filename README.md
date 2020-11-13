@@ -11,7 +11,7 @@ dependencies.
 To install the latest release from [PyPI], use [pip]:
 
 ```bash
-python -m pip install xdg
+python3 -m pip install xdg
 ```
 
 In Python projects using [Poetry] or [Pipenv] for dependency management, add
