@@ -28,13 +28,13 @@ include = ["LICENCE", "src/xdg/py.typed"]
 python = "^3.6"
 
 [tool.poetry.dev-dependencies]
-black = "=18.9b0"
-flake8 = "^3.6"
-isort = "^5.0.0"
-mypy = "^0.782"
-nox = "^2018.10"
-pylint = "^2.6.0"
-pytest = "^4.1"
+black = "^20.8b1"
+flake8 = "^3.8.4"
+isort = "^5.7.0"
+mypy = "^0.812"
+nox = "^2020.12.31"
+pylint = "^2.7.2"
+pytest = "^6.2.2"
 pytest-cov = "^2.11.1"
 
 [build-system]
