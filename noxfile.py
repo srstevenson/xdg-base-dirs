@@ -38,4 +38,4 @@ def black(session):
 @nox.session
 def pytest(session):
     """Check code formatting with black."""
-    session.run("pytest", "test", external=True)
+    session.run("pytest", "--cov=xdg", "test", external=True)
