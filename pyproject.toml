@@ -35,6 +35,7 @@ mypy = "^0.782"
 nox = "^2018.10"
 pylint = "^2.6.0"
 pytest = "^4.1"
+pytest-cov = "^2.11.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
