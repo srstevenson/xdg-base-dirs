@@ -20,17 +20,17 @@ xdg_cache_home(), xdg_config_home(), and xdg_data_home() return
 pathlib.Path objects containing the value of the environment variable
 named XDG_CACHE_HOME, XDG_CONFIG_HOME, and XDG_DATA_HOME respectively,
 or the default defined in the specification if the environment variable
-is unset or empty.
+is unset, empty, or contains a relative path rather than absolute path.
 
 xdg_config_dirs() and xdg_data_dirs() return a list of pathlib.Path
 objects containing the value, split on colons, of the environment
 variable named XDG_CONFIG_DIRS and XDG_DATA_DIRS respectively, or the
 default defined in the specification if the environment variable is
-unset or empty.
+unset or empty. Relative paths are ignored, as per the specification.
 
 xdg_runtime_dir() returns a pathlib.Path object containing the value of
 the XDG_RUNTIME_DIR environment variable, or None if the environment
-variable is not set.
+variable is not set, or contains a relative path rather than absolute path.
 
 """
 
@@ -65,8 +65,9 @@ def _path_from_env(variable: str, default: Path) -> Path:
     """Read an environment variable as a path.
 
     The environment variable with the specified name is read, and its
-    value returned as a path. If the environment variable is not set, or
-    set to the empty string, the default value is returned.
+    value returned as a path. If the environment variable is not set, is
+    set to the empty string, or is set to a relative rather than
+    absolute path, the default value is returned.
 
     Parameters
     ----------
@@ -83,7 +84,7 @@ def _path_from_env(variable: str, default: Path) -> Path:
     """
     # TODO(srstevenson): Use assignment expression in Python 3.8.
     value = os.environ.get(variable)
-    if value:
+    if value and os.path.isabs(value):
         return Path(value)
     return default
 
@@ -94,7 +95,8 @@ def _paths_from_env(variable: str, default: List[Path]) -> List[Path]:
     The environment variable with the specified name is read, and its
     value split on colons and returned as a list of paths. If the
     environment variable is not set, or set to the empty string, the
-    default value is returned.
+    default value is returned. Relative paths are ignored, as per the
+    specification.
 
     Parameters
     ----------
@@ -112,7 +114,11 @@ def _paths_from_env(variable: str, default: List[Path]) -> List[Path]:
     # TODO(srstevenson): Use assignment expression in Python 3.8.
     value = os.environ.get(variable)
     if value:
-        return [Path(path) for path in value.split(":")]
+        paths = [
+            Path(path) for path in value.split(":") if os.path.isabs(path)
+        ]
+        if paths:
+            return paths
     return default
 
 
@@ -151,10 +157,10 @@ def xdg_runtime_dir() -> Optional[Path]:
     returned as per the specification.
 
     """
-    try:
-        return Path(os.environ["XDG_RUNTIME_DIR"])
-    except KeyError:
-        return None
+    value = os.getenv("XDG_RUNTIME_DIR")
+    if value and os.path.isabs(value):
+        return Path(value)
+    return None
 
 
 # The following variables are deprecated, but remain for backward compatibility.

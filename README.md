@@ -42,17 +42,18 @@ from xdg import (
 `xdg_cache_home()`, `xdg_config_home()`, and `xdg_data_home()` return
 [`pathlib.Path` objects][path] containing the value of the environment variable
 named `XDG_CACHE_HOME`, `XDG_CONFIG_HOME`, and `XDG_DATA_HOME` respectively, or
-the default defined in the specification if the environment variable is unset or
-empty.
+the default defined in the specification if the environment variable is unset,
+empty, or contains a relative path rather than absolute path.
 
 `xdg_config_dirs()` and `xdg_data_dirs()` return a list of `pathlib.Path`
 objects containing the value, split on colons, of the environment variable named
 `XDG_CONFIG_DIRS` and `XDG_DATA_DIRS` respectively, or the default defined in
-the specification if the environment variable is unset or empty.
+the specification if the environment variable is unset or empty. Relative paths
+are ignored, as per the specification.
 
 `xdg_runtime_dir()` returns a `pathlib.Path` object containing the value of the
 `XDG_RUNTIME_DIR` environment variable, or `None` if the environment variable is
-not set.
+not set, or contains a relative path rather than absolute path.
 
 ## Copyright
 
