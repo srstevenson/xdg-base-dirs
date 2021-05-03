@@ -33,7 +33,7 @@ flake8 = "^3.9.1"
 isort = "^5.8.0"
 mypy = "^0.812"
 nox = "^2020.12.31"
-pylint = "^2.8.1"
+pylint = "^2.8.2"
 pytest = "^6.2.3"
 pytest-cov = "^2.11.1"
 
