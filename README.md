@@ -36,14 +36,16 @@ from xdg import (
     xdg_data_dirs,
     xdg_data_home,
     xdg_runtime_dir,
+    xdg_state_home,
 )
 ```
 
-`xdg_cache_home()`, `xdg_config_home()`, and `xdg_data_home()` return
-[`pathlib.Path` objects][path] containing the value of the environment variable
-named `XDG_CACHE_HOME`, `XDG_CONFIG_HOME`, and `XDG_DATA_HOME` respectively, or
-the default defined in the specification if the environment variable is unset,
-empty, or contains a relative path rather than absolute path.
+`xdg_cache_home()`, `xdg_config_home()`, `xdg_data_home()`, and
+`xdg_state_home()` return [`pathlib.Path` objects][path] containing the value of
+the environment variable named `XDG_CACHE_HOME`, `XDG_CONFIG_HOME`,
+`XDG_DATA_HOME`, and `XDG_STATE_HOME` respectively, or the default defined in
+the specification if the environment variable is unset, empty, or contains a
+relative path rather than absolute path.
 
 `xdg_config_dirs()` and `xdg_data_dirs()` return a list of `pathlib.Path`
 objects containing the value, split on colons, of the environment variable named
