@@ -170,3 +170,30 @@ def test_xdg_runtime_dir_absolute(monkeypatch: MonkeyPatch) -> None:
     """Test xdg_runtime_dir when XDG_RUNTIME_DIR is absolute path."""
     monkeypatch.setenv("XDG_RUNTIME_DIR", "/xdg_runtime_dir")
     assert xdg.xdg_runtime_dir() == Path("/xdg_runtime_dir")
+
+
+def test_xdg_state_home_unset(monkeypatch: MonkeyPatch) -> None:
+    """Test xdg_state_home when XDG_STATE_HOME is unset."""
+    monkeypatch.delenv("XDG_STATE_HOME", raising=False)
+    monkeypatch.setenv("HOME", os.fspath(HOME_DIR))
+    assert xdg.xdg_state_home() == HOME_DIR / ".local" / "state"
+
+
+def test_xdg_state_home_empty(monkeypatch: MonkeyPatch) -> None:
+    """Test xdg_state_home when XDG_STATE_HOME is empty."""
+    monkeypatch.setenv("HOME", os.fspath(HOME_DIR))
+    monkeypatch.setenv("XDG_STATE_HOME", "")
+    assert xdg.xdg_state_home() == HOME_DIR / ".local" / "state"
+
+
+def test_xdg_state_home_relative(monkeypatch: MonkeyPatch) -> None:
+    """Test xdg_state_home when XDG_STATE_HOME is relative path."""
+    monkeypatch.setenv("HOME", os.fspath(HOME_DIR))
+    monkeypatch.setenv("XDG_STATE_HOME", "rela/tive")
+    assert xdg.xdg_state_home() == HOME_DIR / ".local" / "state"
+
+
+def test_xdg_state_home_absolute(monkeypatch: MonkeyPatch) -> None:
+    """Test xdg_state_home when XDG_STATE_HOME is absolute path."""
+    monkeypatch.setenv("XDG_STATE_HOME", "/xdg_state_home")
+    assert xdg.xdg_state_home() == Path("/xdg_state_home")
