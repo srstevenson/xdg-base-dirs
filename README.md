@@ -21,6 +21,9 @@ To install the latest release from [PyPI], use [pip]:
 python3 -m pip install xdg
 ```
 
+The latest release of `xdg` currently implements version 0.8 of the
+specification, released on 8th May 2021.
+
 In Python projects using [Poetry] or [Pipenv] for dependency management, add
 `xdg` as a dependency with `poetry add xdg` or `pipenv install xdg`.
 Alternatively, since `xdg` is only a single file you may prefer to just copy
