@@ -73,4 +73,5 @@ Copyright © 2016-2021 [Scott Stevenson].
 [poetry]: https://python-poetry.org/
 [pypi]: https://pypi.org/project/xdg/
 [scott stevenson]: https://scott.stevenson.io
-[spec]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[spec]:
+  https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
