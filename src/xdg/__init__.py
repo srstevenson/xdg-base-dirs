@@ -58,11 +58,6 @@ __all__ = [
 ]
 
 
-def _home_dir() -> Path:
-    """Return a Path corresponding to the user's home directory."""
-    return Path(os.path.expandvars("$HOME"))
-
-
 def _path_from_env(variable: str, default: Path) -> Path:
     """Read an environment variable as a path.
 
@@ -126,7 +121,7 @@ def _paths_from_env(variable: str, default: List[Path]) -> List[Path]:
 
 def xdg_cache_home() -> Path:
     """Return a Path corresponding to XDG_CACHE_HOME."""
-    return _path_from_env("XDG_CACHE_HOME", _home_dir() / ".cache")
+    return _path_from_env("XDG_CACHE_HOME", Path.home() / ".cache")
 
 
 def xdg_config_dirs() -> List[Path]:
@@ -136,7 +131,7 @@ def xdg_config_dirs() -> List[Path]:
 
 def xdg_config_home() -> Path:
     """Return a Path corresponding to XDG_CONFIG_HOME."""
-    return _path_from_env("XDG_CONFIG_HOME", _home_dir() / ".config")
+    return _path_from_env("XDG_CONFIG_HOME", Path.home() / ".config")
 
 
 def xdg_data_dirs() -> List[Path]:
@@ -149,7 +144,7 @@ def xdg_data_dirs() -> List[Path]:
 
 def xdg_data_home() -> Path:
     """Return a Path corresponding to XDG_DATA_HOME."""
-    return _path_from_env("XDG_DATA_HOME", _home_dir() / ".local" / "share")
+    return _path_from_env("XDG_DATA_HOME", Path.home() / ".local" / "share")
 
 
 def xdg_runtime_dir() -> Optional[Path]:
@@ -167,7 +162,7 @@ def xdg_runtime_dir() -> Optional[Path]:
 
 def xdg_state_home() -> Path:
     """Return a Path corresponding to XDG_STATE_HOME."""
-    return _path_from_env("XDG_STATE_HOME", _home_dir() / ".local" / "state")
+    return _path_from_env("XDG_STATE_HOME", Path.home() / ".local" / "state")
 
 
 # The following variables are deprecated, but remain for backward compatibility.
