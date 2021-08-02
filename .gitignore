@@ -3,5 +3,6 @@
 /.coverage
 /.nox/
 /build/
+/coverage.xml
 /dist/
 __pycache__/
