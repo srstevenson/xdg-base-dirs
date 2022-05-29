@@ -7,7 +7,7 @@
 [![CI status](https://github.com/srstevenson/xdg/workflows/CI/badge.svg)](https://github.com/srstevenson/xdg/actions)
 [![Coverage](https://img.shields.io/codecov/c/gh/srstevenson/xdg?label=Coverage)](https://app.codecov.io/gh/srstevenson/xdg)
 
-`xdg` is a Python module which provides functions to return paths to the
+`xdg` is a Python module that provides functions to return paths to the
 directories defined by the [XDG Base Directory Specification][spec], to save you
 from duplicating the same snippet of logic in every Python utility you write
 that deals with user cache, configuration, or data files. It has no external
@@ -58,7 +58,7 @@ are ignored, as per the specification.
 
 `xdg_runtime_dir()` returns a `pathlib.Path` object containing the value of the
 `XDG_RUNTIME_DIR` environment variable, or `None` if the environment variable is
-not set, or contains a relative path rather than absolute path.
+not set, or contains a relative path rather than an absolute path.
 
 ## Copyright
 
