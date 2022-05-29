@@ -5,7 +5,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/xdg?label=PyPI)](https://pypi.org/project/xdg/)
 [![Python versions](https://img.shields.io/pypi/pyversions/xdg?label=Python)](https://pypi.org/project/xdg/)
 [![CI status](https://github.com/srstevenson/xdg/workflows/CI/badge.svg)](https://github.com/srstevenson/xdg/actions)
-[![Coverage](https://img.shields.io/codecov/c/gh/srstevenson/xdg?label=Coverage)](https://codecov.io/gh/srstevenson/xdg)
+[![Coverage](https://img.shields.io/codecov/c/gh/srstevenson/xdg?label=Coverage)](https://app.codecov.io/gh/srstevenson/xdg)
 
 `xdg` is a Python module which provides functions to return paths to the
 directories defined by the [XDG Base Directory Specification][spec], to save you
