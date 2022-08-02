@@ -440,7 +440,7 @@ testing = ["virtualenv", "pytest-xdist", "six", "process-tests", "hunter", "fiel
 
 [[package]]
 name = "pyupgrade"
-version = "2.34.0"
+version = "2.37.3"
 description = "A tool to automatically upgrade syntax for newer versions."
 category = "dev"
 optional = false
@@ -532,7 +532,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7,<4.0"
-content-hash = "b3a71b2d471ab8f0787b052a7bdfe1094d863eb8d7c3d20508e642a5c0f56dc9"
+content-hash = "fc3d838cc246d0c15dafd31482c110bbfe35f9db3afce08c394faec4775d02ff"
 
 [metadata.files]
 argcomplete = [
@@ -777,8 +777,8 @@ pytest-cov = [
     {file = "pytest_cov-3.0.0-py3-none-any.whl", hash = "sha256:578d5d15ac4a25e5f961c938b85a05b09fdaae9deef3bb6de9a6e766622ca7a6"},
 ]
 pyupgrade = [
-    {file = "pyupgrade-2.34.0-py2.py3-none-any.whl", hash = "sha256:16617805b8d1138f96a1ff9cdb4b302b39b51804b3fc5474dc36c0326387445a"},
-    {file = "pyupgrade-2.34.0.tar.gz", hash = "sha256:ed0d9f282fa6282d0ca3bc0596a022aeb95435edab9daf3fc04c2ba118687b68"},
+    {file = "pyupgrade-2.37.3-py2.py3-none-any.whl", hash = "sha256:9746efd064dbf53d7f86d6f88a1d48120f58dbfc378f517768634740ea2225e2"},
+    {file = "pyupgrade-2.37.3.tar.gz", hash = "sha256:1414c7a7c558004cf610e6180716b876814b639b5a5789c3da023c5cdaebcd49"},
 ]
 six = [
     {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
