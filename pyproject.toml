@@ -39,7 +39,7 @@ nox = "^2022.11.21"
 pylint = "^2.13.9"
 pytest = "^7.2.0"
 pytest-cov = "^4.0.0"
-pyupgrade = "^3.2.3"
+pyupgrade = "^3.3.1"
 flake8-pytest-style = "^1.6.0"
 
 [build-system]
