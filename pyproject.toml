@@ -33,7 +33,7 @@ python = ">=3.7,<4.0"
 [tool.poetry.dev-dependencies]
 black = "^23.1"
 flake8 = "^5.0.4"
-isort = "^5.11.4"
+isort = "^5.11.5"
 mypy = "^0.991"
 nox = "^2022.11.21"
 pylint = "^2.13.9"
