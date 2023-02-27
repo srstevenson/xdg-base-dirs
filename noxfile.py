@@ -2,14 +2,13 @@
 
 import os
 import pathlib
-from typing import List
 
 import nox
 
-SOURCES = ["noxfile.py", "src", "test/test_xdg.py"]
+SOURCES = ["noxfile.py", "src", "test"]
 
 
-def list_source_files() -> List[str]:
+def list_source_files() -> list[str]:
     """Expand directories in SOURCES to constituent files."""
     paths = [path for path in SOURCES if pathlib.Path(path).is_file()]
     paths.extend(
@@ -62,11 +61,11 @@ def pyupgrade(session: nox.Session) -> None:
     # pyupgrade does not support passing directories as command line arguments
     # so we must construct a list of input filenames.
     session.run(
-        "pyupgrade", "--py37-plus", *list_source_files(), external=True
+        "pyupgrade", "--py310-plus", *list_source_files(), external=True
     )
 
 
 @nox.session
 def pytest(session: nox.Session) -> None:
     """Check code formatting with black."""
-    session.run("pytest", "--cov=xdg", "test", external=True)
+    session.run("pytest", "--cov=xdg_base_dirs", "test", external=True)
