@@ -1,38 +1,44 @@
-# xdg
+# xdg-base-dirs
 
-[![Licence](https://img.shields.io/github/license/srstevenson/xdg?label=Licence&color=blue)](https://github.com/srstevenson/xdg/blob/main/LICENCE)
-[![GitHub release](https://img.shields.io/github/v/release/srstevenson/xdg?label=GitHub)](https://github.com/srstevenson/xdg)
-[![PyPI version](https://img.shields.io/pypi/v/xdg?label=PyPI)](https://pypi.org/project/xdg/)
-[![Python versions](https://img.shields.io/pypi/pyversions/xdg?label=Python)](https://pypi.org/project/xdg/)
-[![CI status](https://github.com/srstevenson/xdg/workflows/CI/badge.svg)](https://github.com/srstevenson/xdg/actions)
-[![Coverage](https://img.shields.io/codecov/c/gh/srstevenson/xdg?label=Coverage)](https://app.codecov.io/gh/srstevenson/xdg)
+[![Licence](https://img.shields.io/github/license/srstevenson/xdg-base-dirs?label=Licence&color=blue)](https://github.com/srstevenson/xdg-base-dirs/blob/main/LICENCE)
+[![GitHub release](https://img.shields.io/github/v/release/srstevenson/xdg-base-dirs?label=GitHub)](https://github.com/srstevenson/xdg-base-dirs)
+[![PyPI version](https://img.shields.io/pypi/v/xdg-base-dirs?label=PyPI)](https://pypi.org/project/xdg-base-dirs/)
+[![Python versions](https://img.shields.io/pypi/pyversions/xdg-base-dirs?label=Python)](https://pypi.org/project/xdg-base-dirs/)
+[![CI status](https://github.com/srstevenson/xdg-base-dirs/workflows/CI/badge.svg)](https://github.com/srstevenson/xdg-base-dirs/actions)
+[![Coverage](https://img.shields.io/codecov/c/gh/srstevenson/xdg-base-dirs?label=Coverage)](https://app.codecov.io/gh/srstevenson/xdg-base-dirs)
 
-`xdg` is a Python module that provides functions to return paths to the
-directories defined by the [XDG Base Directory Specification][spec], to save you
-from duplicating the same snippet of logic in every Python utility you write
+`xdg-base-dirs` is a Python module that provides functions to return paths to
+the directories defined by the [XDG Base Directory Specification][spec], to save
+you from duplicating the same snippet of logic in every Python utility you write
 that deals with user cache, configuration, or data files. It has no external
 dependencies.
+
+:warning: _`xdg-base-dirs` was previously named `xdg`, and was renamed due to an
+import collision with [`PyXDG`](https://pypi.org/project/pyxdg/). If you used
+`xdg` prior to the rename, update by changing the dependency name from `xdg` to
+`xdg-base-dirs` and the import from `xdg` to `xdg_base_dirs`._
 
 ## Installation
 
 To install the latest release from [PyPI], use [pip]:
 
 ```bash
-python3 -m pip install xdg
+python3 -m pip install xdg-base-dirs
 ```
 
-The latest release of `xdg` currently implements version 0.8 of the
+The latest release of `xdg-base-dirs` currently implements version 0.8 of the
 specification, released on 8th May 2021.
 
 In Python projects using [Poetry] or [Pipenv] for dependency management, add
-`xdg` as a dependency with `poetry add xdg` or `pipenv install xdg`.
-Alternatively, since `xdg` is only a single file you may prefer to just copy
-`src/xdg/__init__.py` from the source distribution into your project.
+`xdg-base-dirs` as a dependency with `poetry add xdg-base-dirs` or
+`pipenv install xdg-base-dirs`. Alternatively, since `xdg-base-dirs` is only a
+single file you may prefer to just copy `src/xdg_base_dirs/__init__.py` from the
+source distribution into your project.
 
 ## Usage
 
 ```python
-from xdg import (
+from xdg_base_dirs import (
     xdg_cache_home,
     xdg_config_dirs,
     xdg_config_home,
@@ -62,16 +68,16 @@ not set, or contains a relative path rather than an absolute path.
 
 ## Copyright
 
-Copyright © 2016-2021 [Scott Stevenson].
+Copyright © [Scott Stevenson].
 
-`xdg` is distributed under the terms of the [ISC licence].
+`xdg-base-dirs` is distributed under the terms of the [ISC licence].
 
 [isc licence]: https://opensource.org/licenses/ISC
 [path]: https://docs.python.org/3/library/pathlib.html#pathlib.Path
 [pip]: https://pip.pypa.io/en/stable/
 [pipenv]: https://docs.pipenv.org/
 [poetry]: https://python-poetry.org/
-[pypi]: https://pypi.org/project/xdg/
+[pypi]: https://pypi.org/project/xdg-base-dirs/
 [scott stevenson]: https://scott.stevenson.io
 [spec]:
   https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

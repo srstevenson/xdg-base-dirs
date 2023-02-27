@@ -1,4 +1,4 @@
-# Copyright © 2016-2021 Scott Stevenson <scott@stevenson.io>
+# Copyright © Scott Stevenson <scott@stevenson.io>
 #
 # Permission to use, copy, modify, and/or distribute this software for
 # any purpose with or without fee is hereby granted, provided that the
@@ -35,11 +35,8 @@ variable is not set, or contains a relative path rather than absolute path.
 
 """
 
-# pylint: disable=fixme
-
 import os
 from pathlib import Path
-from typing import List, Optional
 
 __all__ = [
     "xdg_cache_home",
@@ -49,12 +46,6 @@ __all__ = [
     "xdg_data_home",
     "xdg_runtime_dir",
     "xdg_state_home",
-    "XDG_CACHE_HOME",
-    "XDG_CONFIG_DIRS",
-    "XDG_CONFIG_HOME",
-    "XDG_DATA_DIRS",
-    "XDG_DATA_HOME",
-    "XDG_RUNTIME_DIR",
 ]
 
 
@@ -79,14 +70,12 @@ def _path_from_env(variable: str, default: Path) -> Path:
         Value from environment or default.
 
     """
-    # TODO(srstevenson): Use assignment expression in Python 3.8.
-    value = os.environ.get(variable)
-    if value and os.path.isabs(value):
+    if (value := os.environ.get(variable)) and os.path.isabs(value):
         return Path(value)
     return default
 
 
-def _paths_from_env(variable: str, default: List[Path]) -> List[Path]:
+def _paths_from_env(variable: str, default: list[Path]) -> list[Path]:
     """Read an environment variable as a list of paths.
 
     The environment variable with the specified name is read, and its
@@ -99,18 +88,16 @@ def _paths_from_env(variable: str, default: List[Path]) -> List[Path]:
     ----------
     variable : str
         Name of the environment variable.
-    default : List[Path]
+    default : list[Path]
         Default value.
 
     Returns
     -------
-    List[Path]
+    list[Path]
         Value from environment or default.
 
     """
-    # TODO(srstevenson): Use assignment expression in Python 3.8.
-    value = os.environ.get(variable)
-    if value:
+    if value := os.environ.get(variable):
         paths = [
             Path(path) for path in value.split(":") if os.path.isabs(path)
         ]
@@ -124,7 +111,7 @@ def xdg_cache_home() -> Path:
     return _path_from_env("XDG_CACHE_HOME", Path.home() / ".cache")
 
 
-def xdg_config_dirs() -> List[Path]:
+def xdg_config_dirs() -> list[Path]:
     """Return a list of Paths corresponding to XDG_CONFIG_DIRS."""
     return _paths_from_env("XDG_CONFIG_DIRS", [Path("/etc/xdg")])
 
@@ -134,7 +121,7 @@ def xdg_config_home() -> Path:
     return _path_from_env("XDG_CONFIG_HOME", Path.home() / ".config")
 
 
-def xdg_data_dirs() -> List[Path]:
+def xdg_data_dirs() -> list[Path]:
     """Return a list of Paths corresponding to XDG_DATA_DIRS."""
     return _paths_from_env(
         "XDG_DATA_DIRS",
@@ -147,15 +134,14 @@ def xdg_data_home() -> Path:
     return _path_from_env("XDG_DATA_HOME", Path.home() / ".local" / "share")
 
 
-def xdg_runtime_dir() -> Optional[Path]:
+def xdg_runtime_dir() -> Path | None:
     """Return a Path corresponding to XDG_RUNTIME_DIR.
 
     If the XDG_RUNTIME_DIR environment variable is not set, None will be
     returned as per the specification.
 
     """
-    value = os.getenv("XDG_RUNTIME_DIR")
-    if value and os.path.isabs(value):
+    if (value := os.getenv("XDG_RUNTIME_DIR")) and os.path.isabs(value):
         return Path(value)
     return None
 
@@ -163,12 +149,3 @@ def xdg_runtime_dir() -> Optional[Path]:
 def xdg_state_home() -> Path:
     """Return a Path corresponding to XDG_STATE_HOME."""
     return _path_from_env("XDG_STATE_HOME", Path.home() / ".local" / "state")
-
-
-# The following variables are deprecated, but remain for backward compatibility.
-XDG_CACHE_HOME = xdg_cache_home()
-XDG_CONFIG_DIRS = xdg_config_dirs()
-XDG_CONFIG_HOME = xdg_config_home()
-XDG_DATA_DIRS = xdg_data_dirs()
-XDG_DATA_HOME = xdg_data_home()
-XDG_RUNTIME_DIR = xdg_runtime_dir()
