@@ -10,7 +10,7 @@ ignore_missing_imports = true
 
 [tool.poetry]
 name = "xdg-base-dirs"
-version = "5.1.1"
+version = "6.0.0"
 description = "Variables defined by the XDG Base Directory Specification"
 authors = ["Scott Stevenson <scott@stevenson.io>"]
 license = "ISC"
