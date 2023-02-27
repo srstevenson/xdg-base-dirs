@@ -10,16 +10,16 @@ ignore_missing_imports = true
 
 [tool.poetry]
 name = "xdg"
-version = "5.1.1"
+version = "6.0.0"
 description = "Variables defined by the XDG Base Directory Specification"
 authors = ["Scott Stevenson <scott@stevenson.io>"]
 license = "ISC"
 readme = "README.md"
-homepage = "https://github.com/srstevenson/xdg"
-repository = "https://github.com/srstevenson/xdg"
+homepage = "https://github.com/srstevenson/xdg-base-dirs"
+repository = "https://github.com/srstevenson/xdg-base-dirs"
 keywords = ["xdg", "base", "directory", "specification"]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 7 - Inactive",
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: Unix",
