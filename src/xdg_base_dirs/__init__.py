@@ -98,9 +98,7 @@ def _paths_from_env(variable: str, default: list[Path]) -> list[Path]:
 
     """
     if value := os.environ.get(variable):
-        paths = [
-            Path(path) for path in value.split(":") if os.path.isabs(path)
-        ]
+        paths = [Path(path) for path in value.split(":") if os.path.isabs(path)]
         if paths:
             return paths
     return default

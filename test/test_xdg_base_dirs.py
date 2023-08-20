@@ -58,10 +58,7 @@ def test_xdg_config_dirs_relative(monkeypatch: MonkeyPatch) -> None:
 def test_xdg_config_dirs_set(monkeypatch: MonkeyPatch) -> None:
     """Test xdg_config_dirs when XDG_CONFIG_DIRS is set."""
     monkeypatch.setenv("XDG_CONFIG_DIRS", "/first:rela/tive:/sec/ond")
-    assert xdg_base_dirs.xdg_config_dirs() == [
-        Path("/first"),
-        Path("/sec/ond"),
-    ]
+    assert xdg_base_dirs.xdg_config_dirs() == [Path("/first"), Path("/sec/ond")]
 
 
 def test_xdg_config_home_unset(monkeypatch: MonkeyPatch) -> None:
@@ -121,10 +118,7 @@ def test_xdg_data_dirs_relative(monkeypatch: MonkeyPatch) -> None:
 def test_xdg_data_dirs_set(monkeypatch: MonkeyPatch) -> None:
     """Test xdg_data_dirs when XDG_DATA_DIRS is set."""
     monkeypatch.setenv("XDG_DATA_DIRS", "/first/:rela/tive:/sec/ond/")
-    assert xdg_base_dirs.xdg_data_dirs() == [
-        Path("/first/"),
-        Path("/sec/ond/"),
-    ]
+    assert xdg_base_dirs.xdg_data_dirs() == [Path("/first/"), Path("/sec/ond/")]
 
 
 def test_xdg_data_home_unset(monkeypatch: MonkeyPatch) -> None:
