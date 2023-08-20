@@ -1,7 +1,6 @@
 *.egg-info
 .mypy_cache/
 /.coverage
-/.nox/
 /build/
 /coverage.xml
 /dist/

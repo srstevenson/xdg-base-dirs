@@ -22,15 +22,11 @@ python = ">=3.10,<4.0"
 
 [tool.poetry.group.dev.dependencies]
 black = ">=23.1.0"
-flake8 = ">=6.0.0"
-flake8-pytest-style = ">=1.7.2"
-isort = ">=5.12.0"
 mypy = ">=1.0.1"
-nox = ">=2022.11.21,<2024.0.0"
-pylint = ">=2.16.2"
+poethepoet = ">=0.22.0"
 pytest = ">=7.2.1"
 pytest-cov = ">=4.0.0"
-pyupgrade = ">=3.3.1"
+ruff = ">=0.0.285"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -38,9 +34,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 skip-magic-trailing-comma = true
-
-[tool.isort]
-profile = "black"
 
 [tool.mypy]
 check_untyped_defs = true
@@ -55,3 +48,77 @@ warn_return_any = true
 warn_unreachable = true
 warn_unused_configs = true
 warn_unused_ignores = true
+
+[tool.poe.tasks]
+_ruff_fix = "ruff --fix ."
+_black = "black ."
+fmt = ["_ruff_fix", "_black"]
+
+_black_check = "black --check ."
+_ruff = "ruff ."
+_mypy = "mypy ."
+lint = ["_black_check", "_ruff", "_mypy"]
+
+test = "pytest tests"
+check = ["lint", "test"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=xdg_base_dirs --cov-report=term-missing"
+
+[tool.ruff]
+target-version = "py310"
+select = [
+  "A",
+  "ANN",
+  "ARG",
+  "ASYNC",
+  "B",
+  "BLE",
+  "C4",
+  "C90",
+  "CPY",
+  "D",
+  "DTZ",
+  "E",
+  "EM",
+  "ERA",
+  "EXE",
+  "F",
+  "FA",
+  "FBT",
+  "FIX",
+  "FLY",
+  "G",
+  "I",
+  "ICN",
+  "INT",
+  "ISC",
+  "N",
+  "NPY",
+  "PD",
+  "PERF",
+  "PGH",
+  "PIE",
+  "PL",
+  "PT",
+  "PTH",
+  "PYI",
+  "Q",
+  "RET",
+  "RSE",
+  "RUF",
+  "S",
+  "SIM",
+  "SLF",
+  "SLOT",
+  "T10",
+  "T20",
+  "TCH",
+  "TD",
+  "TID",
+  "TRY",
+  "UP",
+  "W",
+  "YTT",
+]
+ignore = ["D203", "D213", "S101"]
