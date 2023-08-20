@@ -29,11 +29,11 @@ python3 -m pip install xdg-base-dirs
 The latest release of `xdg-base-dirs` currently implements version 0.8 of the
 specification, released on 8th May 2021.
 
-In Python projects using [Poetry] or [Pipenv] for dependency management, add
+In Python projects using [Poetry] or [PDM] for dependency management, add
 `xdg-base-dirs` as a dependency with `poetry add xdg-base-dirs` or
-`pipenv install xdg-base-dirs`. Alternatively, since `xdg-base-dirs` is only a
-single file you may prefer to just copy `src/xdg_base_dirs/__init__.py` from the
-source distribution into your project.
+`pdm add xdg-base-dirs`. Alternatively, since `xdg-base-dirs` is only a single
+file you may prefer to just copy `src/xdg_base_dirs/__init__.py` from the source
+distribution into your project.
 
 ## Usage
 
@@ -74,8 +74,8 @@ Copyright © [Scott Stevenson].
 
 [isc licence]: https://opensource.org/licenses/ISC
 [path]: https://docs.python.org/3/library/pathlib.html#pathlib.Path
+[pdm]: https://pdm.fming.dev/
 [pip]: https://pip.pypa.io/en/stable/
-[pipenv]: https://docs.pipenv.org/
 [poetry]: https://python-poetry.org/
 [pypi]: https://pypi.org/project/xdg-base-dirs/
 [scott stevenson]: https://scott.stevenson.io
