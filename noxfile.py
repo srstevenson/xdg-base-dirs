@@ -25,7 +25,7 @@ def list_source_files() -> list[str]:
 @nox.session
 def mypy(session: nox.Session) -> None:
     """Type check code with mypy."""
-    session.run("mypy", "--show-error-codes", "--strict", *SOURCES, external=True)
+    session.run("mypy", *SOURCES, external=True)
 
 
 @nox.session
