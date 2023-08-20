@@ -25,9 +25,7 @@ def list_source_files() -> list[str]:
 @nox.session
 def mypy(session: nox.Session) -> None:
     """Type check code with mypy."""
-    session.run(
-        "mypy", "--show-error-codes", "--strict", *SOURCES, external=True
-    )
+    session.run("mypy", "--show-error-codes", "--strict", *SOURCES, external=True)
 
 
 @nox.session
@@ -60,9 +58,7 @@ def pyupgrade(session: nox.Session) -> None:
 
     # pyupgrade does not support passing directories as command line arguments
     # so we must construct a list of input filenames.
-    session.run(
-        "pyupgrade", "--py310-plus", *list_source_files(), external=True
-    )
+    session.run("pyupgrade", "--py310-plus", *list_source_files(), external=True)
 
 
 @nox.session
