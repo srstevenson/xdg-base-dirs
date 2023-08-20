@@ -70,8 +70,8 @@ def _path_from_env(variable: str, default: Path) -> Path:
         Value from environment or default.
 
     """
-    if (value := os.environ.get(variable)) and os.path.isabs(value):
-        return Path(value)
+    if (value := os.environ.get(variable)) and (path := Path(value)).is_absolute():
+        return path
     return default
 
 
@@ -98,7 +98,7 @@ def _paths_from_env(variable: str, default: list[Path]) -> list[Path]:
 
     """
     if value := os.environ.get(variable):
-        paths = [Path(path) for path in value.split(":") if os.path.isabs(path)]
+        paths = [Path(path) for path in value.split(":") if Path(path).is_absolute()]
         if paths:
             return paths
     return default
@@ -139,8 +139,8 @@ def xdg_runtime_dir() -> Path | None:
     returned as per the specification.
 
     """
-    if (value := os.getenv("XDG_RUNTIME_DIR")) and os.path.isabs(value):
-        return Path(value)
+    if (value := os.getenv("XDG_RUNTIME_DIR")) and (path := Path(value)).is_absolute():
+        return path
     return None
 
 

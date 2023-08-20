@@ -3,9 +3,8 @@
 import os
 from pathlib import Path
 
-from _pytest.monkeypatch import MonkeyPatch
-
 import xdg_base_dirs
+from _pytest.monkeypatch import MonkeyPatch
 
 HOME_DIR = Path("/homedir")
 
