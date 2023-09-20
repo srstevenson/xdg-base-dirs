@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "xdg-base-dirs"
-version = "6.0.0"
+version = "6.0.1"
 description = "Variables defined by the XDG Base Directory Specification"
 authors = ["Scott Stevenson <scott@stevenson.io>"]
 license = "ISC"
