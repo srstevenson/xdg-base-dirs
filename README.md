@@ -1,6 +1,6 @@
 # xdg-base-dirs
 
-[![Licence](https://img.shields.io/github/license/srstevenson/xdg-base-dirs?label=Licence&color=blue)](https://github.com/srstevenson/xdg-base-dirs/blob/main/LICENCE)
+[![License](https://img.shields.io/github/license/srstevenson/xdg-base-dirs?label=License&color=blue)](https://github.com/srstevenson/xdg-base-dirs/blob/main/LICENSE)
 [![GitHub release](https://img.shields.io/github/v/release/srstevenson/xdg-base-dirs?label=GitHub)](https://github.com/srstevenson/xdg-base-dirs)
 [![PyPI version](https://img.shields.io/pypi/v/xdg-base-dirs?label=PyPI)](https://pypi.org/project/xdg-base-dirs/)
 [![Python versions](https://img.shields.io/pypi/pyversions/xdg-base-dirs?label=Python)](https://pypi.org/project/xdg-base-dirs/)
@@ -70,9 +70,9 @@ not set, or contains a relative path rather than an absolute path.
 
 Copyright © [Scott Stevenson].
 
-`xdg-base-dirs` is distributed under the terms of the [ISC licence].
+`xdg-base-dirs` is distributed under the terms of the [ISC license].
 
-[isc licence]: https://opensource.org/licenses/ISC
+[isc license]: https://opensource.org/licenses/ISC
 [path]: https://docs.python.org/3/library/pathlib.html#pathlib.Path
 [pdm]: https://pdm.fming.dev/
 [pip]: https://pip.pypa.io/en/stable/

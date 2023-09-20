@@ -15,7 +15,7 @@ classifiers = [
     "Operating System :: Unix",
     "Operating System :: Microsoft :: Windows",
 ]
-include = ["LICENCE", "src/xdg_base_dirs/py.typed"]
+include = ["LICENSE", "src/xdg_base_dirs/py.typed"]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
