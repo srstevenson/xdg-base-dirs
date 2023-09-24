@@ -13,10 +13,12 @@ you from duplicating the same snippet of logic in every Python utility you write
 that deals with user cache, configuration, or data files. It has no external
 dependencies.
 
-:warning: _`xdg-base-dirs` was previously named `xdg`, and was renamed due to an
-import collision with [`PyXDG`](https://pypi.org/project/pyxdg/). If you used
-`xdg` prior to the rename, update by changing the dependency name from `xdg` to
-`xdg-base-dirs` and the import from `xdg` to `xdg_base_dirs`._
+> [!NOTE]
+>
+> `xdg-base-dirs` was previously named `xdg`, and was renamed due to an import
+> collision with [`PyXDG`](https://pypi.org/project/pyxdg/). If you used `xdg`
+> prior to the rename, update by changing the dependency name from `xdg` to
+> `xdg-base-dirs` and the import from `xdg` to `xdg_base_dirs`.
 
 ## Installation
 
