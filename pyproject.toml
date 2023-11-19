@@ -21,19 +21,15 @@ include = ["src/xdg_base_dirs/py.typed"]
 python = ">=3.10,<4.0"
 
 [tool.poetry.group.dev.dependencies]
-black = ">=23.1.0"
 mypy = ">=1.0.1"
 poethepoet = ">=0.22.0"
 pytest = ">=7.2.1"
 pytest-cov = ">=4.0.0"
-ruff = ">=0.0.285"
+ruff = ">=0.1.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.black]
-skip-magic-trailing-comma = true
 
 [tool.mypy]
 check_untyped_defs = true
@@ -51,13 +47,13 @@ warn_unused_ignores = true
 
 [tool.poe.tasks]
 _ruff_fix = "ruff --fix ."
-_black = "black ."
-fmt = ["_ruff_fix", "_black"]
+_ruff_fmt = "ruff format ."
+fmt = ["_ruff_fix", "_ruff_fmt"]
 
-_black_check = "black --check ."
-_ruff = "ruff ."
+_ruff_fmt_check = "ruff format --check ."
+_ruff_check = "ruff ."
 _mypy = "mypy ."
-lint = ["_black_check", "_ruff", "_mypy"]
+lint = ["_ruff_fmt_check", "_ruff_check", "_mypy"]
 
 test = "pytest tests"
 check = ["lint", "test"]
@@ -68,4 +64,10 @@ addopts = "--cov=xdg_base_dirs --cov-report=term-missing"
 [tool.ruff]
 target-version = "py310"
 select = ["ALL"]
-ignore = ["D203", "D213", "INP001", "S101"]
+ignore = ["COM812", "D203", "D213", "INP001", "ISC001", "S101"]
+
+[tool.ruff.format]
+skip-magic-trailing-comma = true
+
+[tool.ruff.isort]
+split-on-trailing-comma = false
