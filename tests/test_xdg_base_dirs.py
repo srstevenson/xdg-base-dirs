@@ -2,11 +2,13 @@
 
 import os
 from pathlib import Path
+from typing import Final
 
-import xdg_base_dirs
 from _pytest.monkeypatch import MonkeyPatch
 
-HOME_DIR = Path("/homedir")
+import xdg_base_dirs
+
+HOME_DIR: Final = Path("/homedir")
 
 
 def test_xdg_cache_home_unset(monkeypatch: MonkeyPatch) -> None:
