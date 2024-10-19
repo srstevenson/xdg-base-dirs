@@ -18,7 +18,8 @@ on 8th May 2021.
 
 ## Installation
 
-To install the latest release from [PyPI] with [pip], use:
+`xdg-base-dirs` requires Python 3.10 or later. To install the latest release
+from [PyPI] with [pip], use:
 
 ```bash
 python3 -m pip install xdg-base-dirs
