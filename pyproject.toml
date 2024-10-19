@@ -9,13 +9,12 @@ homepage = "https://github.com/srstevenson/xdg-base-dirs"
 repository = "https://github.com/srstevenson/xdg-base-dirs"
 keywords = ["xdg", "base", "directory", "specification"]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
-    "Intended Audience :: Developers",
-    "Natural Language :: English",
-    "Operating System :: Unix",
-    "Operating System :: Microsoft :: Windows",
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "Operating System :: Unix",
+  "Operating System :: Microsoft :: Windows",
 ]
-include = ["src/xdg_base_dirs/py.typed"]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
