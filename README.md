@@ -1,32 +1,32 @@
 # xdg-base-dirs
 
-`xdg-base-dirs` is a Python module that provides functions to return paths to
-the directories defined by the [XDG Base Directory Specification][spec], to save
-you from duplicating the same snippet of logic in every Python utility you write
+xdg-base-dirs is a Python module that provides functions to return paths to the
+directories defined by the [XDG Base Directory Specification][spec], to save you
+from duplicating the same snippet of logic in every Python utility you write
 that deals with user cache, configuration, or data files. It has no external
 dependencies.
 
-`xdg-base-dirs` currently implements version 0.8 of the specification, released
-on 8th May 2021.
+xdg-base-dirs currently implements version 0.8 of the specification, released on
+8th May 2021.
 
 > [!NOTE]
 >
-> `xdg-base-dirs` was previously named `xdg`, and was renamed due to an import
-> collision with [`PyXDG`](https://pypi.org/project/pyxdg/). If you used `xdg`
-> prior to the rename, update by changing the dependency name from `xdg` to
-> `xdg-base-dirs` and the import from `xdg` to `xdg_base_dirs`.
+> xdg-base-dirs was previously named xdg, and was renamed due to an import
+> collision with [PyXDG](https://pypi.org/project/pyxdg/). If you used xdg prior
+> to the rename, update by changing the dependency name from xdg to
+> xdg-base-dirs, and the import from `xdg` to `xdg_base_dirs`.
 
 ## Installation
 
-`xdg-base-dirs` requires Python 3.10 or later. To install the latest release
-from [PyPI] with [pip], use:
+xdg-base-dirs requires Python 3.10 or later. To add xdg-base-dirs as a
+dependency to a project managed with [uv], use:
 
 ```bash
-python3 -m pip install xdg-base-dirs
+uv add xdg-base-dirs
 ```
 
-Alternatively, since `xdg-base-dirs` is only a single file you may prefer to
-just copy `src/xdg_base_dirs/__init__.py` from the source distribution into your
+Alternatively, since xdg-base-dirs is only a single file you may prefer to just
+copy `src/xdg_base_dirs/__init__.py` from the source distribution into your
 project.
 
 ## Usage
@@ -44,8 +44,8 @@ from xdg_base_dirs import (
 ```
 
 `xdg_cache_home()`, `xdg_config_home()`, `xdg_data_home()`, and
-`xdg_state_home()` return [`pathlib.Path` objects][path] containing the value of
-the environment variable named `XDG_CACHE_HOME`, `XDG_CONFIG_HOME`,
+`xdg_state_home()` return [`pathlib.Path` objects][pathlib] containing the value
+of the environment variable named `XDG_CACHE_HOME`, `XDG_CONFIG_HOME`,
 `XDG_DATA_HOME`, and `XDG_STATE_HOME` respectively, or the default defined in
 the specification if the environment variable is unset, empty, or contains a
 relative path rather than absolute path.
@@ -64,11 +64,10 @@ not set, or contains a relative path rather than an absolute path.
 
 Copyright © Scott Stevenson.
 
-`xdg-base-dirs` is distributed under the terms of the [ISC license].
+xdg-base-dirs is distributed under the terms of the [ISC license].
 
 [isc license]: https://opensource.org/licenses/ISC
-[path]: https://docs.python.org/3/library/pathlib.html#pathlib.Path
-[pip]: https://pip.pypa.io/en/stable/
-[pypi]: https://pypi.org/project/xdg-base-dirs/
+[pathlib]: https://docs.python.org/3/library/pathlib.html#pathlib.Path
 [spec]:
   https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[uv]: https://docs.astral.sh/uv/
