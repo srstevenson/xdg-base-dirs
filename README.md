@@ -68,6 +68,5 @@ xdg-base-dirs is distributed under the terms of the [ISC license].
 
 [isc license]: https://opensource.org/licenses/ISC
 [pathlib]: https://docs.python.org/3/library/pathlib.html#pathlib.Path
-[spec]:
-  https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+[spec]: https://specifications.freedesktop.org/basedir-spec/latest/
 [uv]: https://docs.astral.sh/uv/
