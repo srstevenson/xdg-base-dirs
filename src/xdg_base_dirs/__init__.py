@@ -122,8 +122,7 @@ def xdg_config_home() -> Path:
 def xdg_data_dirs() -> list[Path]:
     """Return a list of Paths corresponding to XDG_DATA_DIRS."""
     return _paths_from_env(
-        "XDG_DATA_DIRS",
-        [Path(path) for path in "/usr/local/share/:/usr/share/".split(":")],
+        "XDG_DATA_DIRS", [Path("/usr/local/share/"), Path("/usr/share/")]
     )
 
 
