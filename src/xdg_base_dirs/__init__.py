@@ -57,16 +57,11 @@ def _path_from_env(variable: str, default: Path) -> Path:
     set to the empty string, or is set to a relative rather than
     absolute path, the default value is returned.
 
-    Parameters
-    ----------
-    variable : str
-        Name of the environment variable.
-    default : Path
-        Default value.
+    Args:
+        variable: Name of the environment variable.
+        default: Default value.
 
-    Returns
-    -------
-    Path
+    Returns:
         Value from environment or default.
 
     """
@@ -84,16 +79,11 @@ def _paths_from_env(variable: str, default: list[Path]) -> list[Path]:
     default value is returned. Relative paths are ignored, as per the
     specification.
 
-    Parameters
-    ----------
-    variable : str
-        Name of the environment variable.
-    default : list[Path]
-        Default value.
+    Args:
+        variable: Name of the environment variable.
+        default: Default value.
 
-    Returns
-    -------
-    list[Path]
+    Returns:
         Value from environment or default.
 
     """
@@ -134,8 +124,9 @@ def xdg_data_home() -> Path:
 def xdg_runtime_dir() -> Path | None:
     """Return a Path corresponding to XDG_RUNTIME_DIR.
 
-    If the XDG_RUNTIME_DIR environment variable is not set, None will be
-    returned as per the specification.
+    Returns:
+        A Path corresponding to the XDG_RUNTIME_DIR environment variable or
+        None if the variable is not set.
 
     """
     if (value := os.getenv("XDG_RUNTIME_DIR")) and (path := Path(value)).is_absolute():
