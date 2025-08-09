@@ -26,7 +26,6 @@ dev = [
   "basedpyright>=1.31.1",
   "coverage>=7.6.4",
   "pytest>=7.2.1",
-  "pytest-cov>=4.0.0",
   "ruff>=0.1.6",
 ]
 
@@ -36,10 +35,6 @@ build-backend = "uv_build"
 
 [tool.basedpyright]
 typeCheckingMode = "recommended"
-
-[tool.pytest.ini_options]
-addopts = "--cov=xdg_base_dirs --cov-report=term-missing"
-testpaths = ["tests"]
 
 [tool.ruff]
 target-version = "py310"
