@@ -23,8 +23,8 @@ Issues = "https://github.com/srstevenson/xdg-base-dirs/issues"
 
 [dependency-groups]
 dev = [
+  "basedpyright>=1.31.1",
   "coverage>=7.6.4",
-  "mypy>=1.0.1",
   "pytest>=7.2.1",
   "pytest-cov>=4.0.0",
   "ruff>=0.1.6",
@@ -34,20 +34,8 @@ dev = [
 requires = ["uv_build>=0.7.19,<0.9"]
 build-backend = "uv_build"
 
-[tool.mypy]
-check_untyped_defs = true
-disallow_any_unimported = true
-disallow_untyped_defs = true
-enable_error_code = ["ignore-without-code"]
-no_implicit_optional = true
-show_error_codes = true
-strict = true
-warn_no_return = true
-warn_redundant_casts = true
-warn_return_any = true
-warn_unreachable = true
-warn_unused_configs = true
-warn_unused_ignores = true
+[tool.basedpyright]
+typeCheckingMode = "recommended"
 
 [tool.pytest.ini_options]
 addopts = "--cov=xdg_base_dirs --cov-report=term-missing"
