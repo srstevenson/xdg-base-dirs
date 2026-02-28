@@ -37,13 +37,19 @@ skip-magic-trailing-comma = true
 
 [tool.ruff.lint]
 select = ["ALL"]
-ignore = ["COM812", "INP001", "ISC001", "S101"]
+ignore = [
+  "COM812", # Trailing comma missing
+]
 
 [tool.ruff.lint.isort]
 split-on-trailing-comma = false
 
 [tool.ruff.lint.per-file-ignores]
-"tests/**.py" = ["D"]
+"tests/**.py" = [
+  "D",      # pydocstyle
+  "INP001", # Implicit namespace package
+  "S101",   # Use of assert detected
+]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
