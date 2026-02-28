@@ -22,19 +22,11 @@ Repository = "https://github.com/srstevenson/xdg-base-dirs"
 Issues = "https://github.com/srstevenson/xdg-base-dirs/issues"
 
 [dependency-groups]
-dev = [
-  "basedpyright>=1.31.1",
-  "coverage>=7.6.4",
-  "pytest>=7.2.1",
-  "ruff>=0.1.6",
-]
+dev = ["coverage>=7.6.4", "pytest>=7.2.1", "ruff>=0.1.6", "ty>=0.0.19"]
 
 [build-system]
 requires = ["uv_build>=0.7.19,<0.10"]
 build-backend = "uv_build"
-
-[tool.basedpyright]
-typeCheckingMode = "recommended"
 
 [tool.ruff]
 target-version = "py310"
@@ -55,3 +47,6 @@ split-on-trailing-comma = false
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.ty.rules]
+all = "error"

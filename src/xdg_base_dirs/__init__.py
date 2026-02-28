@@ -64,7 +64,7 @@ def _path_from_env(variable: str, default: Path) -> Path:
         Value from environment or default.
     """
     if (value := os.environ.get(variable)) and (path := Path(value)).is_absolute():
-        return path
+        return path  # ty: ignore[possibly-unresolved-reference]
     return default
 
 
@@ -126,7 +126,7 @@ def xdg_runtime_dir() -> Path | None:
         None if the variable is not set.
     """
     if (value := os.getenv("XDG_RUNTIME_DIR")) and (path := Path(value)).is_absolute():
-        return path
+        return path  # ty: ignore[possibly-unresolved-reference]
     return None
 
 
