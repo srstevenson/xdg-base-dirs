@@ -25,7 +25,7 @@ Issues = "https://github.com/srstevenson/xdg-base-dirs/issues"
 dev = ["coverage>=7.6.4", "pytest>=7.2.1", "ruff>=0.1.6", "ty>=0.0.19"]
 
 [build-system]
-requires = ["uv_build>=0.7.19,<0.10"]
+requires = ["uv_build>=0.7.19,<0.11"]
 build-backend = "uv_build"
 
 [tool.ruff]
