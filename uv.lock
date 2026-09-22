@@ -193,7 +193,7 @@ wheels = [
 
 [[package]]
 name = "xdg-base-dirs"
-version = "6.0.2"
+version = "6.0.3"
 source = { editable = "." }
 
 [package.dev-dependencies]
