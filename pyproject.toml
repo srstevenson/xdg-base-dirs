@@ -1,6 +1,6 @@
 [project]
 name = "xdg-base-dirs"
-version = "6.0.2"
+version = "6.0.3"
 description = "Variables defined by the XDG Base Directory Specification"
 authors = [{ name = "Scott Stevenson", email = "scott@stevenson.io" }]
 requires-python = ">=3.10"
