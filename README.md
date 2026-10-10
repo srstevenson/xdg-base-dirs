@@ -18,7 +18,7 @@ xdg-base-dirs currently implements version 0.8 of the specification, released on
 
 ## Installation
 
-xdg-base-dirs requires Python 3.10 or later. To add xdg-base-dirs as a
+xdg-base-dirs requires Python 3.11 or later. To add xdg-base-dirs as a
 dependency to a project managed with [uv], use:
 
 ```bash

@@ -3,7 +3,7 @@ name = "xdg-base-dirs"
 version = "6.0.3"
 description = "Variables defined by the XDG Base Directory Specification"
 authors = [{ name = "Scott Stevenson", email = "scott@stevenson.io" }]
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 readme = "README.md"
 license = "ISC"
 license-files = ["LICENSE"]
@@ -29,7 +29,7 @@ requires = ["uv_build>=0.7.19,<0.13"]
 build-backend = "uv_build"
 
 [tool.ruff]
-target-version = "py310"
+target-version = "py311"
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -39,6 +39,7 @@ skip-magic-trailing-comma = true
 select = ["ALL"]
 ignore = [
   "COM812", # Trailing comma missing
+  "CPY001", # Missing copyright notice
 ]
 
 [tool.ruff.lint.isort]
@@ -56,3 +57,4 @@ convention = "google"
 
 [tool.ty.rules]
 all = "error"
+truthiness-test-of-none-union = "ignore"
