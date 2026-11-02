@@ -72,8 +72,7 @@ After cloning the repository, you can implement your changes as follows:
 10. Your pull request will be reviewed by the maintainers and either merged, or
     feedback will be provided on changes that are required.
 
-[commit guidelines]:
-  https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[commit guidelines]: https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [mre]: https://stackoverflow.com/help/minimal-reproducible-example
 [pr docs]: https://docs.github.com/en/github/collaborating-with-pull-requests
 [uv]: https://docs.astral.sh/uv/
